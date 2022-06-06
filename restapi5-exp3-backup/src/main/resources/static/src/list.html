@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+maximum-scale=1, user-scalable=no">
+    <title>test</title>-->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../vue.min.js"></script>
+    <script src="../axios.min.js"></script>
+</head>
+<body>
+<script src="../js/ip.js"></script>
+<div id="bg-image">
+    <img  src="../images/p1.jpg">
+</div>
+
+<div id="main-page">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-3" >
+                <div id="left-main">
+                    <div class="row">
+                        <!--上半部分-->
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8">
+                            <div id="profile-img">
+                                <img src="../images/p2.jpg">
+                            </div>
+                        </div>
+                        <!--下半部分-->
+                        <div class="col-md-12">
+                            <div id="profile-top">
+                                <h2>陈振凌</h2>
+                                <h4 id="academicTest">Web技术与实践</h4>
+                                <p>计算机学院</p>
+                            </div>
+                            <div id="profile-mid">
+                                <p id="private">
+                                    个人主页介绍
+                                </p>
+                            </div>
+                            <div id="profile-bot" style="font-size: 20px">
+                                Web技术与实践课程实验<br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-8">
+
+
+                <div id="content">
+                    <div class="row">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-9" id="app">
+                            <br><br><br><br>
+                            <table  class="table  table1">
+                                <thead>
+                                <tr>
+                                    <th scope="col">项目名称</th>
+                                    <th scope="col">项目介绍</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">{{ message1 }}</th>
+                                    <td>{{ messageDes1 }}</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{ message2 }}</th>
+                                    <td>{{ messageDes2 }}</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">{{ message3 }}</th>
+                                    <td>{{ messageDes3 }}</td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="col-1">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="private.html">个人简介</a></li>
+                    <li><a href="project.html">项目经历</a></li>
+                    <li><a href="list.html">Token测试</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="../js/bootstrap.js"></script>
+<script type = "text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+
+            message1: "not found",
+            message2: "not found",
+            message3: "not found",
+            messageDes1:"not found",
+            messageDes2:"not found",
+            messageDes3:"not found",
+        },
+        mounted () {
+            axios
+                .get(("http://"+ip+"/proExp?access_token="+localStorage.getItem("token")))
+                .then(response => (
+                    this.message1 = response.data.ll[0].name,
+                    this.messageDes1 = response.data.ll[0].description,
+                    this.message2 = response.data.ll[1].name,
+                    this.messageDes2 = response.data.ll[1].description,
+                    this.message3 = response.data.ll[2].name,
+                    this.messageDes3 = response.data.ll[2].description
+                ))
+                .catch(function (error) { // 请求失败处理
+                    console.log(error);
+                });
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><p>
+    <project>
+        <name>项目一</name>
+        <description>项目一介绍</description>
+    </project>
+    <project>
+        <name>项目二</name>
+        <description>项目二介绍</description>
+    </project>
+    <project>
+        <name>项目三</name>
+        <description>项目三介绍</description>
+    </project>
+</p>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo>
+    <acount id="1"></acount>
+    <acount id="2"></acount>
+    <to>Tove</to>
+    <from>
+        <name id="1">chen</name>
+        <name id="1">chen2</name>
+        <name id="1">chen6</name>
+    </from>
+
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</fo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<login>
+    <acountandpasswd>
+        <acount id="1">
+            <acountname>zhangsan</acountname>
+            <acountpasswd>123</acountpasswd>
+        </acount>
+    </acountandpasswd>
+</login>

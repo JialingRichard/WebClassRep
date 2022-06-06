@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><page>
+    <pagename>个人主页名称测试-Test</pagename>
+    <academic>技术与实践课程实验---Test</academic>
+    <basicinfo>
+        <name>tom</name>
+        <age>123</age>
+        <school>scu</school>
+        <studentnum>123321</studentnum>
+        <college>scucs</college>
+    </basicinfo>
+
+    <otherinfo>
+
+    </otherinfo>
+</page>
